@@ -1,9 +1,9 @@
-from rest_framework import routers, serializers, viewsets
+from rest_framework import viewsets
+
+from api.serializer import NoticiaSerializer
+from core.models import Noticia
 
 
-# Create your views here.
-
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class NoticiaViewSet(viewsets.ModelViewSet):
+    queryset = Noticia.objects.all()
+    serializer_class = NoticiaSerializer

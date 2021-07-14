@@ -1,8 +1,10 @@
-from rest_framework import routers, serializers, viewsets
-
+from rest_framework import serializers
 
 # Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+from core.models import Noticia
+
+
+class NoticiaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        model = Noticia
+        fields = '__all__'
